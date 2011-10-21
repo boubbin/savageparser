@@ -1,0 +1,35 @@
+dom = get_player_match_stats.php;	// literaly that, also it is formatted really nicely.
+dom = get_comm_match_stats.php		// this and the one above goes together
+aid;					// playerid for some s2pid reason
+mid;					// match id.. well, this one is obvious
+req.open("GET", dom + "?aid=" + aid + "&mid=" + mid, true);
+					// if there is no player stats (player was commanding)
+					// just get commander stats then, vice versa..
+					// default would be player tho...
+
+
+get_period_stats.php?aid		// 30 days stats, yeah, period is 30 days here, nothing to do with women
+aid;					// player id, no idea why: aid
+
+
+get_game_stats.php?aid			// total player stats
+aid;					// ..
+
+
+get_comm_stats.php?aid			// total commander stats
+aid;					// ..
+
+
+get_match_list.php?aid=338371&page=	// not really formatted list of matches
+aid;					// semi easy to parse
+page;					// some reason 14 per page.. s2pid..
+					// if you try to get page that doesnt exist
+					// youll just the last page again
+					// oh, page 0 is page 1 too
+					// giving anything other than number just
+					// give you the page 1
+					// without ?page= gives page 1
+
+
+match_replay.php?mid=			// summar of stats for that game, we load individual stats
+					// inside this one

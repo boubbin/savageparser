@@ -1,0 +1,86 @@
+/* 
+    Document   : style.css
+    Created on : 25.6.2011, 2:13:48
+    Author     : boubbin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+body {
+        background-image: url(../images/bg.jpg);
+        background-repeat: repeat-x;
+        color: white;
+}
+
+#summary_table_info td {
+        text-align: left;
+        font-size: 13px;
+        font-family: verdana;
+        padding-right: 30px;
+        line-height: 12px;
+        vertical-align: top;
+}
+#summary_table table {
+        border: 1px solid;
+}
+#summary_table td {
+        text-align: left;
+        font-size: 13px;
+        font-family: verdana;
+        padding-right: 30px;
+        line-height: 12px;
+}
+#summary_table td.rank {
+        padding-right: 1px;
+}
+#summary_table tr.notranked {
+        color: gray;
+}
+#contest_table td {
+        text-align: right;
+        font-size: 13px;
+        font-family: verdana;
+}
+
+#contest_table .icon {
+        width: 70px;
+}
+#contest_table .header {
+        height: 35px;
+}
+#ongoing {
+        margin: 30px 20px 10px;
+        float:left;
+        width: 30%;
+}
+
+#upcoming {
+        margin: 30px 20px 10px;
+        float:left;
+        width: 30%;
+}
+#recent {
+        margin: 30px 20px 10px;
+        float: left;
+        width: 30%;
+
+}
+#bottom img {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+}
+#summary img {
+        left: 10px;
+}
+td.stat {
+        color: green;
+}
+td.participants {
+        line-height: 17px;
+}
+

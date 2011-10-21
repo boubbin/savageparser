@@ -1,0 +1,26 @@
+[24-Jul-2011 12:50:25] PHP Warning:  Invalid argument supplied for foreach() in /home/boubbino/public_html/savage/parser/match_ajax_info.php on line 16
+[24-Jul-2011 12:50:28] PHP Warning:  Invalid argument supplied for foreach() in /home/boubbino/public_html/savage/parser/match_ajax_info.php on line 16
+[27-Jul-2011 19:52:41] PHP Warning:  Invalid argument supplied for foreach() in /home/boubbino/public_html/savage/parser/match_ajax_info.php on line 16
+[29-Jul-2011 13:21:22] PHP Warning:  Invalid argument supplied for foreach() in /home/boubbino/public_html/savage/parser/match_ajax_info.php on line 16
+[05-Aug-2011 10:07:11] PHP Warning:  Invalid argument supplied for foreach() in /home/boubbino/public_html/savage/parser/match_ajax_info.php on line 16
+[09-Aug-2011 10:50:49] PHP Parse error:  syntax error, unexpected T_STRING, expecting '(' in /home/boubbino/public_html/savage/parser/mysql_functions.php on line 1043
+[09-Aug-2011 10:56:53] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/boubbino/public_html/savage/parser/mysql_functions.php on line 1048
+[23-Aug-2011 10:31:56] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:31:56] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:31:57] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:31:57] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:31:57] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:31:57] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:31:57] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:31:58] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:31:59] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:00] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:00] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:00] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:00] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:00] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:00] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:03] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:03] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[23-Aug-2011 10:32:04] PHP Parse error:  syntax error, unexpected '<' in /home/boubbino/public_html/savage/get_functions.php on line 490
+[31-Aug-2011 06:57:54] PHP Warning:  Invalid argument supplied for foreach() in /home/boubbino/public_html/savage/parser/match_ajax_info.php on line 16

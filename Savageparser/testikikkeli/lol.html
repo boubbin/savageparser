@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+  </head>
+  <body>
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="http://code.jquery.com/jquery-1.6.2.js"></script>
+    <script>
+ $("a").click(function(event){
+   event.preventDefault();
+   $(this).hide("slow");
+ });    </script>
+  </body>
+</html>
+SELECT * FROM (SELECT playername, stats.playerid, (SUM(stats.exp)/(SUM(TIME_TO_SEC(stats.duration))/60)) as _sf, (SUM(TIME_TO_SEC(stats.duration))/60/60) as _time, SUM(exp) AS _exp, (SUM(kills)/(SUM(TIME_TO_SEC(stats.duration))/60)) AS _kills, (SUM(souls)/(SUM(TIME_TO_SEC(stats.duration))/60/60)) AS _souls, (SUM(deaths)/(SUM(TIME_TO_SEC(stats.duration))/60/60)) AS _deaths, SUM(kills)/SUM(deaths) as _kd, (SUM(healed)/(SUM(TIME_TO_SEC(stats.duration))/60)) AS _healed, (SUM(res)/(SUM(TIME_TO_SEC(stats.duration))/60/60)) AS _res, (SUM(gold)/(SUM(TIME_TO_SEC(stats.duration))/60)) AS _gold, (SUM(repair)/(SUM(TIME_TO_SEC(stats.duration))/60)) AS _repair, (SUM(razed)/(SUM(TIME_TO_SEC(stats.duration))/60/60)) AS _razed, (SUM(dmg)/(SUM(TIME_TO_SEC(stats.duration))/60)) AS _dmg, (SUM(bd)/(SUM(TIME_TO_SEC(stats.duration))/60)) AS _bd FROM stats, matches, players WHERE stats.matchid = matches.matchid AND stats.duration > 0 AND matches.date >= '1312689874' AND stats.playerid = players.playerid GROUP BY playername ORDER by _sf DESC) as sub WHERE sub._time >= 1 LIMIT 100;
+SELECT * FROM (SELECT playername, stats.playerid, (SUM(stats.exp)/(SUM(TIME_TO_SEC(stats.duration))/60)) as _sf, (SUM(TIME_TO_SEC(stats.duration))/60/60) as _time, SUM(exp) AS _exp, SUM(kills) AS _kills, SUM(souls) AS _souls, SUM(deaths) AS _deaths, SUM(kills)/SUM(deaths) as _kd, SUM(healed) AS _healed, SUM(res) AS _res, SUM(gold) AS _gold, SUM(repair) AS _repair, SUM(razed) AS _razed, SUM(dmg) AS _dmg, SUM(bd) AS _bd FROM stats, matches, players WHERE stats.matchid = matches.matchid AND stats.duration > 0 AND matches.date >= '1312689896' AND stats.playerid = players.playerid GROUP BY playername ORDER by _sf DESC) as sub WHERE sub._time >= 1 LIMIT 100;
