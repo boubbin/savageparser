@@ -1,0 +1,3 @@
+10,40 * * * * curl -s savage.boubbin.org/stats_files/get_missing_playernames.php
+00,15,30,45 * * * * php /home/boubbino/public_html/savage/stats_files/match_deploy.php
+00,15,30,45 * * * * php /home/boubbino/public_html/savage/stats_files/event_deploy.phpxxxxxx××××××××××××××x

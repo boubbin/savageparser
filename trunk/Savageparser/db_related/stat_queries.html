@@ -1,0 +1,22 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+      <br>$period should be replaced with the unixtime timestamp from that time you want the result from<br>
+      one of the easiest way is to make expression like: <code>(unix_timestamp() - (((<i>days</i>*24*60*60))))</code><br>
+      <br>Query to get the unique and non unique players per day (does not include commanders, need to union commanderstats with distinct(playerid) to do it):<br>
+      <code>SELECT FROM_UNIXTIME(date, "%W") as weekday, FROM_UNIXTIME(date, "%m/%d") as day, COUNT(stats.playerid) as players, COUNT(DISTINCT(stats.playerid)) as unique_players FROM stats, matches WHERE stats.matchid = matches.matchid AND matches.date >= '$period' GROUP BY day ORDER BY day LIMIT 1, 100;</code>
+      <br>
+      <br>Matches played daily<br>
+      <code>SELECT day, count(day) as matches FROM (SELECT date, FROM_UNIXTIME(date, '%d.%m') as day FROM matches WHERE date >= '$period') as sub GROUP BY sub.day ORDER BY date ASC LIMIT 1, 40;</code>
+      <br>
+      <br>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+/* CSS only needed for the demo */
+
+
+
+#ajax_tooltipObj .ajax_tooltip_content{
+	border:2px solid #317082;	/* Border width */
+	left:6%;	/* Same as border thickness */
+	//top:-1365px;
+	position:absolute;
+	width:310px;	/* Width of tooltip content */
+	height:600px;	/* Height of tooltip content */
+	background-color:#FFF;	/* Background color */
+	padding:5px;	/* Space between border and content */
+	font-size:0.8em;	/* Font size of content */
+	overflow:auto;	/* Hide overflow content */
+	z-index:1000001;
+        line-height: 15px;
+}
+#ajax_tooltipObj a {
+        color: blue;
+}

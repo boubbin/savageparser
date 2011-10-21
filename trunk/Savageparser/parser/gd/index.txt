@@ -1,0 +1,89 @@
+<?php
+	//echo "<h1>Databse under maintenance, try again in few minutes!</h1>";
+	//die();
+	ob_start();
+	session_start();
+        ini_set('session.gc_maxlifetime', 18000*60);
+	$time = microtime(true);
+	require('print_page_functions.php');
+	require('echo_mainpage.php');
+	require('get_functions.php');
+	require('misc_functions.php');
+	include('parser/index.php');
+        include('parser/get_lifetime.php');
+        include('parser/test.php');
+	echo_meta_and_head_tags();
+	if (!isset($_SESSION['authed'])) { echo_login_page(); die(); }
+	if (isset($_GET['logout'])) { session_destroy(); header('Location: index.php'); }
+        if ($_SESSION['level'] == 0) { echo "<h1>Your account doesnt support website access</h1>"; die(); }
+        update_lastlogin_for_userid(md5($_SESSION['username']));
+	echo_header();
+	echo_sidebar();
+	ob_end_flush();
+	flush();
+	if (isset($_GET['action'])) { $action = $_GET['action']; }
+	else { $action = NULL; }
+	if (is_null($action)) {
+		echo_mainpage();
+	} else if ($action=="stats") {
+		if (!isset($_GET['playerid'])) {
+                        // ladder
+			echo_ordered_summary_of_stats();
+		} else {
+			$playerid   = $_GET['playerid'];
+			$playername = $_GET['playername'];
+			echo_player_stats_page($playerid, $playername);
+		}
+		
+	} else if ($action == "updater") {
+		if (isset($_GET['pass']) && isset($_GET['userid'])) {
+			$password = $_GET['pass'];
+			$playerid = $_GET['userid'];
+			if (isset($_GET['page'])) { $page = $_GET['page']; } else { $page = 1; }
+			if ($password == "yeah") {
+				$playername = playerid_to_playername($playerid);
+				update_update_time_for_playerid($playerid);
+				get_10pages_stats_of_player($playerid, $playername, $page);
+                                js_on_confirm_href('Stats of player '.$playername.' are now fully updated!\nWould you like to see them now?', "index.php?action=stats&playerid=$playerid&playername=$playername&period=30", '#');
+			} 
+		} else {
+			echo_update_options();
+		}
+	} else if ($action == "service") {
+		echo_database_stats();
+	} else if ($action == "account") {
+		echo_account_page();
+	} else if ($action == "misc") {
+                // echo "Under development right now, check back laters";
+                echo_static_misc_stats();
+        } else if ($action == "manage") {
+		if ($_SESSION['level'] < 2) { js_href("index.php"); die(); }
+		echo_management_page();
+	} else if ($action == "sigpic") {
+                echo_sigpic_page();
+        } else if ($action == "removevip") {
+                if ($_SESSION['level'] < 2) { js_href("index.php"); die(); }
+                if (isset($_GET['force'])) {
+                        remove_vip_if_exists($_GET['playerid'], $_GET['playername']);
+                        js_href('index.php');
+                } else {
+                        confirm_remove_vip_if_exists($_GET['playerid'], $_GET['playername']);
+                }
+        } else if ($action == "get_lifetime") {
+		if ($_SESSION['level'] < 2) { js_href("index.php"); die(); }
+		echo_get_lifetime_page();
+        } else if ($action == "clan_stats") {
+                if (!isset($_GET['clan'])) { js_href("index.php"); die(); }
+                if ($_SESSION['level'] < 2) { js_href("index.php"); die(); } // comment this line when feature done, ok?
+                $period = 30;
+                if (isset($_GET['period'])) { $period = $_GET['period']; }
+                echo_clan_stats_for_clan_for_period($_GET['clan'], $period);
+        } else if ($action == "chat") {
+                echo_chat();
+        }
+	echo_footer($time);
+	if (!isset($_SESSION['alert'])) {
+		$_SESSION['alert'] = 1;
+		// jsalert("Sigpic betas are here");
+	}
+?>
