@@ -2161,9 +2161,9 @@ function open_mysql_connection() {
 	global $sql_connections;
 	$sql_connections++;
 	$mysql_host = "localhost";
-	$mysql_user = "boubbino_savage";
-	$mysql_pass = "SavageparseR";
-	$mysql_table = "boubbino_savage";
+	$mysql_user = "user";
+	$mysql_pass = "pass";
+	$mysql_table = "db";
 	mysql_pconnect($mysql_host, $mysql_user, $mysql_pass);
 	mysql_selectdb($mysql_table);
 }
